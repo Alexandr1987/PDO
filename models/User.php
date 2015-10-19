@@ -12,6 +12,8 @@ class User
     public $id;
     public $title;
     public $text;
+    public $dbh;
+
 
     public static function findAll(){
         $dbh = new Connection();
@@ -21,9 +23,9 @@ class User
         return $sth->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 
-    public static function Delete($it){
+    public function Delete($it){
         $dbh = new Connection();
-        $sql = 'DELETE * FROM ' . self::TABLE .' WHERE id=:id';
+        $sql = 'DELETE FROM ' . self::TABLE .' WHERE id=:id';
         $sth = $dbh->prepare($sql);
         $sth->execute([':id' => $it]);
 

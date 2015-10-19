@@ -3,8 +3,10 @@
 require_once __DIR__.'/models/User.php';
 
 try {
-    $data = User::findAll();
-    User::Delete('57');
+    //$data = User::findAll();
+
+    $n = new User();
+    $n->Delete(58);
     //$data = User::findOne();
 
     //Подстановка

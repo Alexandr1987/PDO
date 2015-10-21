@@ -1,12 +1,13 @@
 <?php
 
-require_once __DIR__.'/models/User.php';
+require_once __DIR__.'/autoload.php';
 
 try {
-    //$data = User::findAll();
 
+    $data = User::findAll();
     $n = new User();
-    $n->Delete(58);
+    $n->DeleteById(62);
+    $n->Update('5555','63');
     //$data = User::findOne();
 
     //Подстановка
